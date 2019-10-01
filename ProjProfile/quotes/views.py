@@ -30,7 +30,7 @@ def home(request):
         response = json.loads(api_response.content)
 
     except:
-        time.sleep(5)
+        response = 'error..'
 
     return render(request, 'home.html', {'response': response})
 
