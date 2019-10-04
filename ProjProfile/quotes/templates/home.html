@@ -1,7 +1,7 @@
 {% extends 'base.html'%}
 {% block content %}
 <main role="main">
-
+{% load staticfiles %}
   <!-- Main jumbotron for a primary marketing message or call to action -->
   <div class="jumbotron">
     <div class="container">
@@ -23,7 +23,7 @@
           <defs>
              <pattern id="imgpattern2" x="0" y="0" width="1" height="1">
               <image width="100%" height="100%"
-               xlink:href="https://i.pinimg.com/originals/a6/bd/4f/a6bd4fc3c82297a85fc2db69ae7866c9.jpg"/>
+               xlink:href="{% static 'a6bd4fc3c82297a85fc2db69ae7866c9.jpg' %}"/>
              </pattern>
           </defs><rect width="100%" height="100%" fill="url(#imgpattern2)"></rect></svg>
       </div>
@@ -34,14 +34,34 @@
     <div class="row featurette">
       <div class="col-md-7 order-md-2">
         <h2 class="featurette-heading">Pay attention! <span class="text-muted">Gainer and Loser.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </br>
+      <div style="color:green;">
+        <h3>Gainer</h3>
+
+        <p class="lead">{{ Gainer_response.0.companyName }} Latest Price: ${{ Gainer_response.0.latestPrice }} &#8593;{{ Gainer_response.0.changePercent }}</p>
+        <p class="lead">{{ Gainer_response.1.companyName }} Latest Price: ${{ Gainer_response.1.latestPrice }} &#8593;{{ Gainer_response.1.changePercent }}</p>
+        <p class="lead">{{ Gainer_response.2.companyName }} Latest Price: ${{ Gainer_response.2.latestPrice }} &#8593;{{ Gainer_response.2.changePercent }}</p>
+        {% if Gainer_response.3 %}
+        <p class="lead">{{ Gainer_response.3.companyName }} Latest Price: ${{ Gainer_response.3.latestPrice }} &#8593;{{ Gainer_response.3.changePercent }}</p>
+        {% endif %}
+      </div>
+      </br>
+      <div style="color:red;">
+        <h3>Loser</h3>
+        <p class="lead">{{ Loser_response.0.companyName }} Latest Price: ${{ Loser_response.0.latestPrice }} &#8595;{{ Loser_response.0.changePercent }}</p>
+        <p class="lead">{{ Loser_response.1.companyName }} Latest Price: ${{ Loser_response.1.latestPrice }} &#8595;{{ Loser_response.1.changePercent }}</p>
+        <p class="lead">{{ Loser_response.2.companyName }} Latest Price: ${{ Loser_response.2.latestPrice }} &#8595;{{ Loser_response.2.changePercent }}</p>
+        {% if Loser_response.3 %}
+        <p class="lead">{{ Loser_response.3.companyName }} Latest Price: ${{ Loser_response.3.latestPrice }} &#8593;{{ Loser_response.3.changePercent }}</p>
+        {% endif %}
+      </div>
       </div>
       <div class="col-md-5 order-md-1">
         <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500">
           <defs>
              <pattern id="imgpattern1" x="0" y="0" width="1" height="1">
               <image width="100%" height="100%"
-               xlink:href="https://www.philsme.com/wp-content/uploads/2017/05/8-highly-effeective.png"/>
+               xlink:href="{% static '8-highly-effeective.png' %}"/>
              </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#imgpattern1)"></rect></svg>
@@ -53,14 +73,14 @@
     <div class="row featurette">
       <div class="col-md-7">
         <h2 class="featurette-heading">Check lastest market news. <span class="text-muted">From google.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        <p class="lead">Get the lastest news, it will help you to create your list. Focus on good potential stocks in your list would be nice!</p>
       </div>
       <div class="col-md-5">
         <a href="https://www.google.com/finance#scso=_B2CTXeisMoWwtQXHo4WIAQ2:0"><svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500">
           <defs>
              <pattern id="imgpattern" x="0" y="0" width="1" height="1">
               <image width="100%" height="100%"
-               xlink:href="https://ssl.gstatic.com/shortcuts/android/home/v1/svg/finance_g_badged.svg"/>
+               xlink:href="{% static 'finance_g_badged.svg' %}"/>
              </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#imgpattern)"></rect></svg></a>
