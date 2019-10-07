@@ -1,4 +1,60 @@
 {% extends 'base.html'%}
 {% block content %}
-about...
+
+{% load humanize %}
+
+<div class="container">
+<br>
+<h1>See your stock information below</h1>
+</br>
+
+  <table class="table table-bordered table-hover">
+
+
+
+    <tbody>
+      <tr>
+        <th scope="col">Company Name</th>
+        <td scope="col">{{ Loser_response.companyName }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Latest Price</th>
+        <td>${{ Loser_response.latestPrice }}</td>
+      </tr>
+      <tr>
+        <th scope="col">Today's change percent</th>
+        <td scope="col">{{ Loser_response.changePercent }}</td>
+      </tr>
+      <tr>
+        <th scope="row">52 week High</th>
+        <td>${{ Loser_response.week52High }}</td>
+
+      </tr>
+      <tr>
+        <th scope="row">52 week Low</th>
+        <td>${{ Loser_response.week52Low }}</td>
+
+      </tr>
+      <tr>
+        <th scope="row">Market Capacity</th>
+        <td>${{ markCap | intword }}</td>
+
+      </tr>
+      <tr>
+        <th scope="row">Previous Close</th>
+        <td>{{ Loser_response.previousClose }}</td>
+
+      </tr>
+      <tr>
+        <th scope="row">P/E Ratio</th>
+        <td>{{ Loser_response.peRatio }}</td>
+
+      </tr>
+
+    </tbody>
+  </table>
+
+</div>
+
+
 {% endblock %}

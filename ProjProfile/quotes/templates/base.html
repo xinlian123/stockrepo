@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>StockList</title>
+    <title>WhichStock</title>
     <link rel="icon" type="image/png" sizes="any" href="{% static 'increasing-stocks-graphic.png' %}">
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/jumbotron/">
 
@@ -23,6 +23,7 @@
         -ms-user-select: none;
         user-select: none;
       }
+    
       p {
         margin-bottom: 0.1rem;
       }
@@ -35,6 +36,13 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-image: url({% static 'a115b73f349a87bb0d60eb9e83087520.jpg' %});
+      }
+      .jumbotron2 {
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+        background-position: center;
+        background-image: url(https://www.workday.com/content/dam/web/en-us/images/backgrounds/hm-hero-gartner-mq-hcm-2019.jpg/jcr:content/renditions/cq5dam.mob.600.337.jpg);
       }
       .display-3 {
         color:#FFFAFA
@@ -71,7 +79,7 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search Stock Quote" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
@@ -81,9 +89,9 @@
 
 {% endblock %}
 
-<footer class="container">
-  <p>&copy; Xin 2017-2019</p>
-</footer>
+
+
+</body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="https://getbootstrap.com/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="https://getbootstrap.com/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script></body>
 </html>
