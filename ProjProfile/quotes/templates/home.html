@@ -15,17 +15,22 @@
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading">Create you own stocklist. <span class="text-muted">Watch them together everyday.</span></h2>
+        <h2 class="featurette-heading">See today's <span class="text-muted">Earning release companys.</span></h2>
+
+        {% if earning %}
+        
+        {% else%}
         <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        {% endif %}
       </div>
       <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500">
+          <a href="{% url 'earning' %}"><svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500">
           <defs>
              <pattern id="imgpattern2" x="0" y="0" width="1" height="1">
               <image width="100%" height="100%"
                xlink:href="{% static 'a6bd4fc3c82297a85fc2db69ae7866c9.jpg' %}"/>
              </pattern>
-          </defs><rect width="100%" height="100%" fill="url(#imgpattern2)"></rect></svg>
+          </defs><rect width="100%" height="100%" fill="url(#imgpattern2)"></rect></svg></a>
       </div>
     </div>
 
