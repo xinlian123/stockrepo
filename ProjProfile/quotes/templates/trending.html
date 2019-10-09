@@ -1,0 +1,117 @@
+{% extends 'base.html'%}
+{% block content %}
+
+{% load humanize %}
+<div class="container">
+<br>
+<h1>Today's Trending Stocks</h1>
+</br>
+{% if Gainer_response %}
+<h2 style="color:green">Market Gainers</h2>
+<table class="table table-bordered" style="color:green">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Company Name</th>
+      <th scope="col">Stock Symbol</th>
+      <th scope="col">Stock Price</th>
+      <th scope="col">Today's Change</th>
+      <th scope="col">Previous Close</th>
+      <th scope="col">Market Cap</th>
+      <th scope="col">52Wk High</th>
+      <th scope="col">52Wk Low</th>
+
+    </tr>
+  </thead>
+  <tbody>
+      			{% for list_item in Gainer_response %}
+      				<tr>
+    					<th scope="row">{{ list_item.companyName }}</th>
+              <td>{{ list_item.symbol }}</td>
+    					<td>${{ list_item.latestPrice }}</td>
+              <td>{{ list_item.changePercent }}</td>
+    					<td>${{ list_item.previousClose }}</td>
+    					<td>${{ list_item.marketCap }}</td>
+    					<td>${{ list_item.week52High }}</td>
+    					<td>${{ list_item.week52Low }}</td>
+
+    				</tr>
+    			{% endfor %}
+  </tbody>
+</table>
+</br>
+{% else %}
+ There is no market gainers data at the monment.
+{% endif %}
+{% if Loser_response %}
+<h2 style="color:red">Market Losers</h2>
+<table class="table table-bordered" style="color:red">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Company Name</th>
+      <th scope="col">Stock Symbol</th>
+      <th scope="col">Stock Price</th>
+      <th scope="col">Today's Change</th>
+      <th scope="col">Previous Close</th>
+      <th scope="col">Market Cap</th>
+      <th scope="col">52Wk High</th>
+      <th scope="col">52Wk Low</th>
+
+    </tr>
+  </thead>
+  <tbody>
+      			{% for list_item in Loser_response %}
+      				<tr>
+    					<th scope="row">{{ list_item.companyName }}</th>
+              <td>{{ list_item.symbol }}</td>
+    					<td>${{ list_item.latestPrice }}</td>
+              <td>{{ list_item.changePercent }}</td>
+    					<td>${{ list_item.previousClose }}</td>
+    					<td>${{ list_item.marketCap }}</td>
+    					<td>${{ list_item.week52High }}</td>
+    					<td>${{ list_item.week52Low }}</td>
+
+    				</tr>
+    			{% endfor %}
+  </tbody>
+</table>
+</br>
+{% else %}
+ There is no market loser data at the monment.
+{% endif %}
+{% if Mover_response %}
+<h2>Market Movers</h2>
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Company Name</th>
+      <th scope="col">Stock Symbol</th>
+      <th scope="col">Stock Price</th>
+      <th scope="col">Today's Change</th>
+      <th scope="col">Previous Close</th>
+      <th scope="col">Market Cap</th>
+      <th scope="col">52Wk High</th>
+      <th scope="col">52Wk Low</th>
+
+    </tr>
+  </thead>
+  <tbody>
+      			{% for list_item in Mover_response %}
+      				<tr>
+    					<th scope="row">{{ list_item.companyName }}</th>
+              <td>{{ list_item.symbol }}</td>
+    					<td>${{ list_item.latestPrice }}</td>
+              <td>{{ list_item.changePercent }}</td>
+    					<td>${{ list_item.previousClose }}</td>
+    					<td>${{ list_item.marketCap }}</td>
+    					<td>${{ list_item.week52High }}</td>
+    					<td>${{ list_item.week52Low }}</td>
+
+    				</tr>
+    			{% endfor %}
+  </tbody>
+</table>
+{% else %}
+ There is no market movers data at the monment.
+{% endif %}
+</div>
+{% endblock %}
